@@ -1,9 +1,18 @@
 import './App.css';
 import Game from './Game/Game';
+import NavBar from './Game/Navbar';
 
 function App() {
   return (
-    <Game/>
+    <div className="app-container">
+      <div className='header'>
+        <NavBar/>
+      </div>
+
+      <div className="canvas" ><Game/></div>
+    </div>
+
+
   );
 }
 
