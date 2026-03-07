@@ -6,6 +6,7 @@ import { Camera } from './Camera';
 import { DarkSky } from './DarkSky';
 import { LightSky } from './LightSky';
 import { CloudySky } from './CloudySky';
+import { Trees } from "./Trees";
 
 const Game: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -21,8 +22,11 @@ const Game: React.FC = () => {
   const darkSky = useRef(new DarkSky(CANVAS_WIDTH, CANVAS_HEIGHT));
   const lightSky = useRef(new LightSky(CANVAS_WIDTH, CANVAS_HEIGHT));
   const cloudySky = useRef(new CloudySky(CANVAS_WIDTH, CANVAS_HEIGHT));
-
   const ground = useRef(new Ground(CANVAS_WIDTH, CANVAS_HEIGHT));
+
+  const highPalm = useRef(new Trees(100, 50, "highPalm"));
+  const largeTree = useRef(new Trees(100, 50, "largeTree"));
+  const mediumPalm = useRef(new Trees(50, 50, "mediumPalm"));
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -53,6 +57,10 @@ const Game: React.FC = () => {
       ground.current.render(ctx);
       cloudySky.current.render(ctx);
       player.current.render(ctx);
+      highPalm.current.render(ctx)
+      largeTree.current.render(ctx)
+      mediumPalm.current.render(ctx)
+
 
       requestAnimationFrame(gameLoop);
     };
