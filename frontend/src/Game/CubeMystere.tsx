@@ -20,7 +20,7 @@ export class MysteryBlock implements GameAsset {
         this.width = width;
         this.height = height;
 
-        this.pos = { x: 500, y: 0 };
+        this.pos = { x: 500, y: 0 }
 
         this.sprite = new Image();
         this.sprite.src = mysteryBlock;
@@ -32,6 +32,7 @@ export class MysteryBlock implements GameAsset {
             this.onGround = true;
             
         };
+        
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -44,7 +45,7 @@ export class MysteryBlock implements GameAsset {
 
         ctx.drawImage(
             this.sprite,
-            this.useCamera ? -camera.x * 0.2 : this.pos.x,
+            this.useCamera ? camera.worldToScreenX(this.pos.x) : this.pos.x,
             this.pos.y,
             this.width,
             this.height,

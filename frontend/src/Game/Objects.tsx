@@ -73,7 +73,4 @@ export class Objects implements GameAsset {
         );
     }
 
-    onAttack() {
-
-    }
 }
