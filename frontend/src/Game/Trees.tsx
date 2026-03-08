@@ -78,4 +78,8 @@ export class Trees implements GameAsset {
             this.height,
         );
     }
+    
+    onAttack(){
+
+    }
 }

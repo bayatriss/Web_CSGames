@@ -2,6 +2,7 @@ import { Camera } from './Camera';
 import mainCharacterImg from '../assets/characters/main-character.png';
 import { GROUND_Y } from './Constants';
 import type { Coordinates, GameAsset } from './GameAsset';
+import { Slash } from './Slash';
 
 export class Player implements GameAsset {
   private static instance: Player | null = null;
@@ -51,6 +52,10 @@ export class Player implements GameAsset {
     if (keys.current?.['ArrowUp'] && this.onGround) {
       this.vy = -12;
       this.onGround = false;
+    }
+    //attack
+    if (keys.current?.['Space'] && this.onGround) {
+      
     }
 
     // Gravity

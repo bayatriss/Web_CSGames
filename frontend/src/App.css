@@ -58,6 +58,10 @@ header .nav-link:hover {
   height: 100%;
 }
 
+.slash
+{
+  visibility: hidden;
+}
 
 .meme {
   position: fixed;

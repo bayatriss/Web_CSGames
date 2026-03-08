@@ -7,6 +7,7 @@ import { DarkSky } from './DarkSky';
 import { LightSky } from './LightSky';
 import { CloudySky } from './CloudySky';
 import { Trees } from "./Trees";
+import { Slash } from "./Slash";
 
 const Game: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -27,6 +28,9 @@ const Game: React.FC = () => {
   const highPalm = useRef(new Trees(100, 50, "highPalm"));
   const largeTree = useRef(new Trees(100, 50, "largeTree"));
   const mediumPalm = useRef(new Trees(50, 50, "mediumPalm"));
+
+  const slash = useRef(new Slash(CANVAS_WIDTH, CANVAS_HEIGHT));
+
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -60,6 +64,7 @@ const Game: React.FC = () => {
       highPalm.current.render(ctx)
       largeTree.current.render(ctx)
       mediumPalm.current.render(ctx)
+      slash.current.render(ctx)
 
 
       requestAnimationFrame(gameLoop);
