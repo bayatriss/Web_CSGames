@@ -20,7 +20,7 @@ export class MysteryBlock implements GameAsset {
         this.width = width;
         this.height = height;
 
-        this.pos = { x: 500, y: 0 }
+        this.pos = { x: 10, y: 10 }
 
         this.sprite = new Image();
         this.sprite.src = mysteryBlock;
