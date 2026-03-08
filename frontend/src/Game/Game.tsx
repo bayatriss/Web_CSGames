@@ -10,6 +10,8 @@ import { Trees } from "./Trees";
 import { Slash } from "./Slash";
 import { MysteryBlock } from "./CubeMystere";
 import { Clouds } from "./Clouds";
+import { Objects } from "./Objects";
+
 
 const Game: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -35,6 +37,10 @@ const Game: React.FC = () => {
   const mysteryBlock = useRef(new MysteryBlock(CANVAS_WIDTH, CANVAS_HEIGHT));
   const clouds = useRef(new Clouds(CANVAS_WIDTH, CANVAS_HEIGHT));
 
+  const flower = useRef(new Objects(CANVAS_WIDTH, CANVAS_HEIGHT,"flower"));
+  const bottle = useRef (new Objects(CANVAS_WIDTH, CANVAS_HEIGHT,"bottle"));
+  const bush = useRef(new Objects(CANVAS_WIDTH, CANVAS_HEIGHT,"bush"));
+ 
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -71,6 +77,9 @@ const Game: React.FC = () => {
       slash.current.render(ctx)
       mysteryBlock.current.render(ctx)
       clouds.current.render(ctx)
+      flower.current.render(ctx)
+      bottle.current.render(ctx)
+      bush.current.render(ctx)
 
       requestAnimationFrame(gameLoop);
     };

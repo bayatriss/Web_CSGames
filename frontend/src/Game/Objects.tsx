@@ -1,19 +1,18 @@
 import { Camera } from "./Camera";
 import { GROUND_Y, MAP_HEIGHT } from './Constants';
 
-import highPalm from "../assets/scenery/trees/high-palm.png";
-import largeTree from "../assets/scenery/trees/large-tree.png";
-import mediumPalm from "../assets/scenery/trees/medium-palm.png";
+import flower from "../assets/scenery/ground_props/flowery_bush.png";
+import bush from "../assets/scenery/ground_props/bush.png";
+import bottle from "../assets/scenery/ground_props/bottle.png";
 import type { Coordinates, GameAsset } from "./GameAsset";
 
-export class Trees implements GameAsset {
+export class Objects implements GameAsset {
     sprite: HTMLImageElement;
     pos: Coordinates;
     width: number = 40;
     height: number = 50;
     type: string;
     useCamera: boolean = true;
-    isPalm: boolean;
     vy: number = 0;
     onGround: boolean = false;
 
@@ -44,23 +43,20 @@ export class Trees implements GameAsset {
 
     handleType(type: string) {
         switch (type) {
-            case "highPalm":
-                this.sprite.src = highPalm;
-                this.pos.x = 700;
-                this.isPalm = true;
+            case "flower":
+                this.sprite.src = flower;
+                this.pos.x = 600;
                 break;
-            case "largeTree":
-                this.sprite.src = largeTree;
-                this.pos.x = 300;
-                this.isPalm = false;
+            case "bush":
+                this.sprite.src = bush;
+                this.pos.x = 100;
                 break;
-            case "mediumPalm":
-                this.sprite.src = mediumPalm;
-                this.pos.x = 155;
-                this.isPalm = true;
+            case "bottle":
+                this.sprite.src = bottle;
+                this.pos.x = 370;
                 break;
             default:
-                this.sprite.src = highPalm;
+                this.sprite.src = flower;
                 this.pos.x = 155;
                 break;
         }
@@ -77,7 +73,7 @@ export class Trees implements GameAsset {
         );
     }
 
-    onAttack(){
+    onAttack() {
 
     }
 }
