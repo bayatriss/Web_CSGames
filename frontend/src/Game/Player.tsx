@@ -4,6 +4,10 @@ import { GROUND_Y } from './Constants';
 import type { Coordinates, GameAsset } from './GameAsset';
 import { Slash } from './Slash';
 
+/*function spawnAttack(playerPosition) {
+  
+}*/
+
 export class Player implements GameAsset {
   private static instance: Player | null = null;
 
@@ -53,9 +57,10 @@ export class Player implements GameAsset {
       this.vy = -12;
       this.onGround = false;
     }
+
     //attack
     if (keys.current?.['Space'] && this.onGround) {
-      
+      alert("attack")
     }
 
     // Gravity
