@@ -14,7 +14,6 @@ export class Trees implements GameAsset {
     type: string;
     useCamera: boolean = true;
     isPalm: boolean;
-    gravity: number;
     vy: number = 0;
     onGround: boolean = false;
 
@@ -23,7 +22,6 @@ export class Trees implements GameAsset {
         this.type = type;
         this.pos = { x: 300, y: 0 }
         this.sprite = new Image();
-        this.gravity = 0.8;
         this.handleType(type);
 
         this.sprite.onload = () => {
@@ -78,7 +76,7 @@ export class Trees implements GameAsset {
             this.height,
         );
     }
-    
+
     onAttack(){
 
     }

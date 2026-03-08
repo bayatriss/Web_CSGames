@@ -8,6 +8,8 @@ import { LightSky } from './LightSky';
 import { CloudySky } from './CloudySky';
 import { Trees } from "./Trees";
 import { Slash } from "./Slash";
+import { MysteryBlock } from "./CubeMystere";
+import { Clouds } from "./Clouds";
 
 const Game: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -30,6 +32,8 @@ const Game: React.FC = () => {
   const mediumPalm = useRef(new Trees(50, 50, "mediumPalm"));
 
   const slash = useRef(new Slash(CANVAS_WIDTH, CANVAS_HEIGHT));
+  const mysteryBlock = useRef(new MysteryBlock(CANVAS_WIDTH, CANVAS_HEIGHT));
+  const clouds = useRef(new Clouds(CANVAS_WIDTH, CANVAS_HEIGHT));
 
 
   useEffect(() => {
@@ -65,7 +69,8 @@ const Game: React.FC = () => {
       largeTree.current.render(ctx)
       mediumPalm.current.render(ctx)
       slash.current.render(ctx)
-
+      mysteryBlock.current.render(ctx)
+      clouds.current.render(ctx)
 
       requestAnimationFrame(gameLoop);
     };
